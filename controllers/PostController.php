@@ -9,9 +9,11 @@
 namespace app\controllers;
 
 use Yii;
+
 class PostController extends AppController
 {
-    public function actionTest()
+public $layout='basic';
+    public function actionIndex()
     {
         $names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
 
@@ -20,6 +22,11 @@ class PostController extends AppController
     //    print_r($names);
     //    var_dump(Yii::$app);
         return $this->render('test');
+    }
+    public function actionShow()
+    {
+   //     $this->layout = 'basic';
+        return $this->render('show');
     }
 
 }

@@ -12,4 +12,7 @@
  */
 
 //$this->debug(Yii::$app);
-\app\controllers\debug(Yii::$app);
+
+// \app\controllers\debug(Yii::$app); // виклик загальної функції дебаг
+
+debug(Yii::$app); //вивід через оголошену функцію, яку підклюсили в індексі
