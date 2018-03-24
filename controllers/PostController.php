@@ -15,9 +15,9 @@ class PostController extends AppController
 public $layout='basic';
     public function actionIndex()
     {
-        $names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
+    //    $names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
 
-     $this->debug($names);
+    // $this->debug($names);
     //   $this->debug(Yii::$app);
     //    print_r($names);
     //    var_dump(Yii::$app);
