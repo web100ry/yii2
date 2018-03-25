@@ -10,7 +10,8 @@
  * Time: 19:41
  *
  */
-
+$names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
+debug($names);
 //$this->debug(Yii::$app);
 
 // \app\controllers\debug(Yii::$app); // виклик загальної функції дебаг

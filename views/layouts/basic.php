@@ -8,7 +8,7 @@ AppAsset::register($this);
 <html lang="ua">
 <head>
     <meta charset="UTF-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <?php $this->head() ?>
@@ -28,9 +28,7 @@ AppAsset::register($this);
             <li class="nav-item">
                 <a class="nav-link"><?=Html::a('Стаття', ['/post/show']);?></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+
         </ul>
         <?= $content ?>
     </div>
