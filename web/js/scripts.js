@@ -1,3 +1,3 @@
-/**
- * Created by root on 23.03.18.
- */
+
+//alert( "Привет" );
+$('.container').append('<p>SHOW!!!</p>');
