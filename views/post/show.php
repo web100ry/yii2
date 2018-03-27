@@ -1,6 +1,45 @@
 <h1>Show Action</h1>
 
 <button class="btn btn-success">Click me...</button>
-<?php //$this->registerJSFile('@web/js/scripts.js',['depends'=>'yii\web\YiiAsset'])?>
-<?php $this->registerJS('$(\'.container\').append(\'<p>SHOW!!!</p>\');',\yii\web\View::POS_LOAD)?>
-<?php $this->registerCSS('.container{background: #ccc;}')?>
+<?php // $this->registerJSFile('@web/js/scripts.js',['depends'=>'yii\web\YiiAsset'])?>
+<?php //$this->registerJS('$(\'.container\').append(\'<p>SHOW!!!</p>\');',\yii\web\View::POS_LOAD)?>
+<?php //$this->registerCSS('.container{background: #ccc;}')?>
+
+
+<?php
+
+$script = <<< JS
+$("button").on('click', function(e) {
+    $.ajax({
+       url: 'index.php?r=post/index',
+       type: 'GET',
+       data: {id: 'id'},
+       success: function(data) {
+           console.log(data);
+       }
+    });
+});
+JS;
+$this->registerJs($script);
+
+
+
+
+
+//$js = <<< JS
+//        $('#btn').click(function(){
+//            $.ajax({
+//                url: 'index.php?r=post/index',
+//                data: {test: '112233'},
+//                type: 'GET',
+//                success: function(res){
+//                    console.log(res);
+//                },
+//                error: function(){
+//                    alert('Error!');
+//                }
+//            });
+//        });
+//JS;
+//$this->registerJs($js);
+?>
