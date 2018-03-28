@@ -11,6 +11,7 @@ AppAsset::register($this);
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1">
     -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?= Html::csrfMetaTags() // для генерації токенів та ідентифікації POST запитів?>
     <title>Document</title>
     <?php $this->head() ?>
 </head>

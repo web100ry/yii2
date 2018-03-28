@@ -12,7 +12,7 @@ $script = <<< JS
 $("button").on('click', function(e) {
     $.ajax({
        url: 'index.php?r=post/index',
-       type: 'GET',
+       type: 'POST',
        data: {id: 'id'},
        success: function(data) {
            console.log(data);
