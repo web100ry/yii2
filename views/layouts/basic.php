@@ -33,6 +33,7 @@ AppAsset::register($this);
 
         </ul>
 
+
             <?php
                 //debug($this->blocks);
                 if(isset($this->blocks['block1'])):

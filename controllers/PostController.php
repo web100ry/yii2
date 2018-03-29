@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\TestForm;
 
 class PostController extends AppController
 {
