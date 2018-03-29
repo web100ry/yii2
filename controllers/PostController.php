@@ -42,6 +42,9 @@ public function beforeAction($action)
     public function actionShow()
     {
    //     $this->layout = 'basic';
+     $this->view->title='Одна стаття!';
+     $this->view->registerMetaTag(['name'=>'keywords', 'content'=>'ключові слова...']);
+     $this->view->registerMetaTag(['name'=>'description', 'content'=>'Опис сторінки...']);
         return $this->render('show');
     }
 }

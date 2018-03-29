@@ -12,7 +12,7 @@ AppAsset::register($this);
     -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?= Html::csrfMetaTags() // для генерації токенів та ідентифікації POST запитів?>
-    <title>Document</title>
+    <title><?= $this->title?></title>
     <?php $this->head() ?>
 </head>
 
@@ -32,6 +32,18 @@ AppAsset::register($this);
             </li>
 
         </ul>
+
+            <?php
+                //debug($this->blocks);
+                if(isset($this->blocks['block1'])):
+            ?>
+
+            <?php echo $this->blocks['block1'];?>
+
+            <?php endif; ?>
+
+
+
         <?= $content ?>
     </div>
 </div>
