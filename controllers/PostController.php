@@ -32,13 +32,20 @@ public function beforeAction($action)
             debug(Yii::$app->request->post());
             return 'test';
         }
+
+
     //    $names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
 
     // $this->debug($names);
     //   $this->debug(Yii::$app);
     //    print_r($names);
     //    var_dump(Yii::$app);
-        return $this->render('test');
+
+        $model= new TestForm();
+
+
+
+        return $this->render('test',compact('model'));
     }
     public function actionShow()
     {

@@ -16,4 +16,33 @@ class TestForm extends Model
 public $name;
 public $email;
 public $text;
+public function attributeLabels()
+{
+    return [
+        'name' => 'Ім\'я',
+        'email' => 'Email',
+        'text' => 'Повідомлення',
+    ];
+}
+
+    public function rules()
+    {
+        return [
+        [['name', 'email'], 'required', 'message' => 'поле обов\'язкове'],
+            ['email', 'email'],
+            ['name', 'string', 'min'=>2, 'max'=>10, 'tooShort'=>'мало символів <2', 'tooLong'=>'забагато символів >10'],
+            ['text', 'trim'],
+            ['name', 'myRule'],
+        ];
+
+    }
+
+    public function myRule($attrs){
+        if (!in_array($this->$attrs, ['hello', 'world'])){
+            $this->addError($attrs,'Wrong!');
+        }
+    }
+
+
+
 }
