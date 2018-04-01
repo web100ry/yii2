@@ -31,6 +31,6 @@ class AppAsset extends AssetBundle
     //public $jsOptions = ['position' => \yii\web\View::POS_LOAD];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 }

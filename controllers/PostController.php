@@ -42,7 +42,15 @@ public function beforeAction($action)
     //    var_dump(Yii::$app);
 
         $model= new TestForm();
-
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()){
+               // debug($model);
+                Yii::$app->session->setFlash('success','Данні прийнято!');
+               return $this->refresh();
+            }  else {
+                Yii::$app->session->setFlash('error','Помилка!');
+            }
+        }
 
 
         return $this->render('test',compact('model'));

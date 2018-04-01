@@ -31,7 +31,8 @@ public function attributeLabels()
         [['name', 'email'], 'required', 'message' => 'поле обов\'язкове'],
             ['email', 'email'],
             ['name', 'string', 'min'=>2, 'max'=>10, 'tooShort'=>'мало символів <2', 'tooLong'=>'забагато символів >10'],
-            ['text', 'trim'],
+            ['text', 'trim'], //коли поле не валідуэться, на сервер не передається!
+           ['text', 'safe'], //для передачі даних в модель в будь якому випадку
             ['name', 'myRule'],
         ];
 
