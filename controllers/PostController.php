@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\Category;
 use Yii;
 use app\models\TestForm;
 
@@ -61,6 +62,8 @@ public function beforeAction($action)
      $this->view->title='Одна стаття!';
      $this->view->registerMetaTag(['name'=>'keywords', 'content'=>'ключові слова...']);
      $this->view->registerMetaTag(['name'=>'description', 'content'=>'Опис сторінки...']);
-        return $this->render('show');
+
+     $cats= Category::find()->all();
+     return $this->render('show', compact('cats'));
     }
 }

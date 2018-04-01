@@ -14,6 +14,9 @@
 
 <?php
 
+debug($cats);
+
+
 $script = <<< JS
 $("button").on('click', function(e) {
     $.ajax({
