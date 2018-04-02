@@ -63,7 +63,23 @@ public function beforeAction($action)
      $this->view->registerMetaTag(['name'=>'keywords', 'content'=>'ключові слова...']);
      $this->view->registerMetaTag(['name'=>'description', 'content'=>'Опис сторінки...']);
 
-     $cats= Category::find()->all();
-     return $this->render('show', compact('cats'));
+     //$cats= Category::find()->orderBy(['id'=>SORT_DESC])->all();
+     //$cats= Category::find()->asArray()->all();
+     //$cats= Category::find()->asArray()->where('parent=691')->all();
+     //$cats= Category::find()->asArray()->where(['parent'=>691])->all();
+     //$cats= Category::find()->asArray()->where(['like','title', 'pp'])->all(); //вибір по полю тайтл все де зустрічаються пп
+    // $cats= Category::find()->asArray()->where(['<=','id', 695])->all(); //вибір по полю id все <= 695
+        //$cats= Category::find()->asArray()->where('parent=691')->limit(2)->all();
+       // $cats= Category::find()->asArray()->where(['parent'=>691])->limit(1)->one();
+        //$cats= Category::find()->asArray()->count();
+        //$cats= Category::findOne(['parent'=>691]);
+        //$cats= Category::findAll(['parent'=>691]);
+
+        //    $query = "SELECT * FROM categories WHERE title LIKE '%pp%'";
+            $query = "SELECT * FROM categories WHERE title LIKE :search"; //безпечний запит через параметр (захист від ін'єкцій)
+
+            $cats=Category::findBySql($query, [':search'=>'%pp%'])->all();
+
+return $this->render('show', compact('cats'));
     }
 }
