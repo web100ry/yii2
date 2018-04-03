@@ -18,8 +18,25 @@
 //    echo $cat['title']."<br>";
 //}
 
-debug($cats);
+//debug($cats);
+//echo count($cats->products);
+//echo count($cats[0]->products);
+//debug($cats);
 
+foreach ($cats as $cat)
+{
+    echo '<ul>';
+        echo '<li>'.$cat->title.'</li>';
+        $products=$cat->products;
+        foreach ($products as $product){
+            echo '<ul>';
+            echo '<li>'.$product->title.'</li>';
+            echo '</ul>';
+
+        }
+
+    echo '</ul>';
+}
 
 $script = <<< JS
 $("button").on('click', function(e) {

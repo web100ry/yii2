@@ -76,9 +76,19 @@ public function beforeAction($action)
         //$cats= Category::findAll(['parent'=>691]);
 
         //    $query = "SELECT * FROM categories WHERE title LIKE '%pp%'";
-            $query = "SELECT * FROM categories WHERE title LIKE :search"; //безпечний запит через параметр (захист від ін'єкцій)
+           // $query = "SELECT * FROM categories WHERE title LIKE :search"; //безпечний запит через параметр (захист від ін'єкцій)
 
-            $cats=Category::findBySql($query, [':search'=>'%pp%'])->all();
+           // $cats=Category::findBySql($query, [':search'=>'%pp%'])->all();
+
+        //------------------------------------------------------
+      //  $cats = Category::findOne('694'); //
+      //  $cats = Category::find()->with('products')->where('id=694')->all(); //
+        //$cats = Category::find()->all(); // відкладена загрузка - 36 запитів
+        $cats = Category::find()->with('products')->all(); //жадна загрузка! - 6 запитів!
+
+
+
+
 
 return $this->render('show', compact('cats'));
     }
