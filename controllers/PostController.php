@@ -35,16 +35,17 @@ public function beforeAction($action)
         }
 
 
-    //    $names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
-
-    // $this->debug($names);
-    //   $this->debug(Yii::$app);
-    //    print_r($names);
-    //    var_dump(Yii::$app);
-
         $model= new TestForm();
+
+//        $model->name='Автор2';
+//        $model->email='mail@test.ua';
+//        $model->text='Some TEXT';
+//        $model->save();
+
+
+
         if ($model->load(Yii::$app->request->post())) {
-            if ($model->validate()){
+            if ($model->save()){
                // debug($model);
                 Yii::$app->session->setFlash('success','Данні прийнято!');
                return $this->refresh();

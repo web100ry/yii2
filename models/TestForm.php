@@ -9,13 +9,18 @@
 namespace app\models;
 
 
-use yii\base\Model;
+//use yii\base\Model;
+use yii\db\ActiveRecord;
 
-class TestForm extends Model
+class TestForm extends ActiveRecord
 {
-public $name;
-public $email;
-public $text;
+    public static function tableName()
+    {
+        return 'posts';
+    }
+//public $name;
+//public $email;
+//public $text;
 public function attributeLabels()
 {
     return [
@@ -28,22 +33,10 @@ public function attributeLabels()
     public function rules()
     {
         return [
-        [['name', 'email'], 'required', 'message' => 'поле обов\'язкове'],
+        [['name', 'text'], 'required', ],
             ['email', 'email'],
-            ['name', 'string', 'min'=>2, 'max'=>10, 'tooShort'=>'мало символів <2', 'tooLong'=>'забагато символів >10'],
-            ['text', 'trim'], //коли поле не валідуэться, на сервер не передається!
-           ['text', 'safe'], //для передачі даних в модель в будь якому випадку
-            ['name', 'myRule'],
         ];
 
     }
-
-    public function myRule($attrs){
-        if (!in_array($this->$attrs, ['hello', 'world'])){
-            $this->addError($attrs,'Wrong!');
-        }
-    }
-
-
 
 }
