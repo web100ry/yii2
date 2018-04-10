@@ -42,9 +42,10 @@ use yii\helpers\Html;
 
 
 <?php
-$names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
-debug($names);
-debug($model);
+//$names = ['Ivanov','Petrov', 'Sidorov', 'Popov'];
+//debug($names);
+//debug($model);
+
 //$this->debug(Yii::$app);
 
 // \app\controllers\debug(Yii::$app); // виклик загальної функції дебаг

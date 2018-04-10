@@ -26,13 +26,24 @@ public function beforeAction($action)
 }
 
 
+    /**
+     * @return string|\yii\web\Response
+     */
     public function actionIndex()
     {
         if (Yii::$app->request->isAjax){
-           // debug($_POST);
             debug(Yii::$app->request->post());
             return 'test';
         }
+
+TestForm::deleteAll(['>','id',8]);
+       // $post = TestForm::findOne(7);
+       // debug($post);
+       // $post->email='1sd22@sd1.sd1';
+        //$post->name='1111';
+        //$post->text='222';
+       // $post->save();
+      //  $post->delete();
 
 
         $model= new TestForm();
@@ -46,7 +57,7 @@ public function beforeAction($action)
 
         if ($model->load(Yii::$app->request->post())) {
             if ($model->save()){
-               // debug($model);
+             //  debug($model);
                 Yii::$app->session->setFlash('success','Данні прийнято!');
                return $this->refresh();
             }  else {
@@ -54,8 +65,9 @@ public function beforeAction($action)
             }
         }
 
-
-        return $this->render('test',compact('model'));
+       return $this->render('test',compact('model'));
+      //  return $this->render('test');
+      //  debug($post);
     }
     public function actionShow()
     {
