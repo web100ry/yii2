@@ -1,7 +1,2 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: root
- * Date: 10.04.18
- * Time: 23:38
- */
+<!-- <h1>Hello, WORLD! </h1>  -->
+<?= $content ?>

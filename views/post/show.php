@@ -1,18 +1,38 @@
-<?php // $this->title = 'Одна стаття';?>
+<?php
+// $this->title = 'Одна стаття';
+use app\components\MyWidget;
+?>
 
 <?php $this->beginBlock('block1');?>
 <h1>БЛОК 1</h1>
 <?php $this->endBlock();?>
 
 <h1>Show Action</h1>
+<?php
 
+//    echo MyWidget::widget(['name'=>'Vasya']);
+    //echo MyWidget::widget();
+MyWidget::begin();
+    echo "hello world";
+MyWidget::end();
+
+
+
+?>
+<br>
 <button class="btn btn-success">Click me...</button><br>
 <?php // $this->registerJSFile('@web/js/scripts.js',['depends'=>'yii\web\YiiAsset'])?>
 <?php //$this->registerJS('$(\'.container\').append(\'<p>SHOW!!!</p>\');',\yii\web\View::POS_LOAD)?>
 <?php //$this->registerCSS('.container{background: #ccc;}')?>
-
-
 <?php
+MyWidget::begin();
+echo "привіт світ!";
+MyWidget::end();
+?>
+<?php
+
+
+
 //foreach ($cats as $cat){
     //echo $cat->title."<br>";
 //    echo $cat['title']."<br>";
