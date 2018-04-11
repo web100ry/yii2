@@ -1,7 +1,7 @@
 <?php
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
-
+use kartik\datetime\DateTimePicker;
 ?>
 <h1>
    Form for Post Test
@@ -35,6 +35,25 @@ use yii\helpers\Html;
 <?php $form = ActiveForm::begin(['options'=>['id'=>'testForm']])?>
 <?= $form->field($model,'name')?>
 <?= $form->field($model,'email')->input('email')?>
+
+
+<?php
+echo DateTimePicker::widget([
+    'name' => 'datetime_10',
+    'options' => ['placeholder' => 'Select operating time ...'],
+    'convertFormat' => true,
+    'pluginOptions' => [
+        'format' => 'd-M-Y g:i A',
+        'startDate' => '01-Mar-2014 12:00 AM',
+        'todayHighlight' => true
+    ]
+]);
+
+?>
+
+
+
+
 <?= $form->field($model,'text')->textarea(['rows'=>5])?>
 <?= Html::submitButton('Відправити', ['class' => 'btn btn-success'])?>
 <?php ActiveForm::end()?>
