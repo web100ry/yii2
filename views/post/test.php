@@ -2,6 +2,8 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 use kartik\datetime\DateTimePicker;
+use mihaildev\ckeditor\CKEditor;
+
 ?>
 <h1>
    Form for Post Test
@@ -50,11 +52,17 @@ echo DateTimePicker::widget([
 ]);
 
 ?>
+<?php
+    echo $form->field($model, 'text')->widget(CKEditor::className(),[
+    'editorOptions' => [
+    'preset' => 'full', //разработанны стандартные настройки basic, standard, full данную возможность не обязательно использовать
+    'inline' => false, //по умолчанию false
+    ],
+    ]);
+?>
 
 
-
-
-<?= $form->field($model,'text')->textarea(['rows'=>5])?>
+<?php // echo $form->field($model,'text')->textarea(['rows'=>5])?>
 <?= Html::submitButton('Відправити', ['class' => 'btn btn-success'])?>
 <?php ActiveForm::end()?>
 
