@@ -22,7 +22,7 @@ AppAsset::register($this);
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active"><?=Html::a('Головна', '/web/');?></a>
+                <a class="nav-link active"><?=Html::a('Головна', '/');?></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link"> <?=Html::a('Статті', ['/post/index']);?></a>
