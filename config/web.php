@@ -53,8 +53,13 @@ $config = [
             'suffix' => '.html',
             'rules' => [
                //'about' => 'site/about',
+                [
+                  'pattern'=>'',
+                    'route'=>'site/index',
+                    'suffix'=>''
+                ],
                 '<action:(about|contact|login)>'=> 'site/<action>',
-            //  '<action:\w+>'=> 'site/<action>', //all actions
+            // 'post/<action:\w+>'=> '<action>', //all actions
             ],
 
         ],

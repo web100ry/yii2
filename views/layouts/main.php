@@ -39,7 +39,7 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/']],
+            ['label' => 'Home', 'url' => '/'],
             ['label' => 'Post', 'url' => ['/post/']],
             ['label' => 'About', 'url' => ['/about/']],
             ['label' => 'Contact', 'url' => ['/contact/']],
@@ -64,6 +64,7 @@ AppAsset::register($this);
 <a href="<?=Url::to('/')?>">Home</a>
         <?= Html::a('About',Url::to(['/about']))?>
         <?= Html::a('Contact',Url::to(['/contact']))?>
+
 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
